@@ -474,9 +474,9 @@ const userdata64 = pulumi
 // Define launch template
 const launchTemplate = new aws.ec2.LaunchTemplate("launchTemplate", {
   name: "asg-launchTemplate",
-  imageId: amiID, // Replace with your custom AMI ID
+  imageId: amiID,
   instanceType: instanceType,
-  keyName: keyName, // Replace with your AWS keyname
+  keyName: keyName, 
   networkInterfaces: [
     {
       associatePublicIpAddress: true,
@@ -711,7 +711,7 @@ const lambda = new aws.lambda.Function("mylambda", {
     variables: {
       GoogleAccessKey: serviceAccountKey.id,
       GoogleBucket_Name: bucket.name,
-      Email_API: "9cd326d12a06bb011e144deff0ae7c7f-30b58138-6c97bb45",
+      Email_API: "Your_mailgun_api_key",
       MAIL_DOMAIN: "rajastelang.me",
       SECRET_ARN: mySecret.arn,
       project_id: project_id,
